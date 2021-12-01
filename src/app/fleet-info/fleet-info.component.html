@@ -71,7 +71,49 @@
       label="įtraukti"
       icon="pi pi-plus"
       iconPos="left"
-      styleClass="p-button-primary p-m-1 btn"
+      styleClass="p-m-1 btn"
+    ></p-button>
+  </ng-template>
+</p-dialog>
+
+<p-dialog
+  header="Poliso operacijos"
+  [(visible)]="displayLOG"
+  [style]="{ width: '1200px' }"
+>
+  <ng-template pTemplate="header">
+    <p>Generalinės sutarties <b> PARK 000001</b></p><br>
+    <p><b>2900 000001</b> poliso operacijos</p>
+  </ng-template>
+
+  <table style="border-collapse:collapse;">
+    <tr>
+      <th style="width:100px;">
+        Data
+      </th>
+      <th style="">Veiksmas</th>
+      <th style="">
+        Vardas, Pavardė
+      </th>
+      <th style="">Elektroninis paštas</th>
+      <th style="">Dokumento numeris</th>
+    </tr>
+    <tr>
+      <td >2022-02-02 11:22:11</td>
+      <td>Naujas įrašas</td>
+      <td >Vardu Pavarde</td>
+      <td >draudimas@asseco.lt</td>
+      <td>-</td>
+    </tr>
+    
+  </table>
+
+  <ng-template pTemplate="footer">
+    <p-button
+      label="įtraukti"
+      icon="pi pi-plus"
+      iconPos="left"
+      styleClass="p-m-1 btn"
     ></p-button>
   </ng-template>
 </p-dialog>
@@ -88,7 +130,7 @@
             (click)="
               showDialogAddVehicles(); ImportTab = false; printTab = false
             "
-            styleClass="p-button-success p-button-outlined p-m-1 btn p-button-sm"
+            styleClass="p-button-success  p-m-1 btn p-button-sm"
           ></p-button>
           <p-button
             label="Importuoti"
@@ -102,21 +144,21 @@
             icon="pi pi-spinner"
             iconPos="left"
             (click)="ImportTab = false; printTab = false"
-            styleClass="p-button-success p-button-outlined  p-m-1  btn p-button-sm"
+            styleClass="p-button-success p-m-1  btn p-button-sm"
           ></p-button>
           <p-button
             label="Pašalinti"
             icon="pi pi-minus-circle"
             iconPos="left"
             (click)="ImportTab = false; printTab = false"
-            styleClass="p-button-success p-button-outlined  p-m-1  btn p-button-sm"
+            styleClass="p-button-success  p-m-1  btn p-button-sm"
           ></p-button>
           <p-button
             label="Sunaikinti"
             (click)="ImportTab = false; printTab = false"
             icon="pi pi-times"
             iconPos="left"
-            styleClass="p-button-success p-button-outlined  p-m-1  btn p-button-sm"
+            styleClass="p-button-success   p-m-1  btn p-button-sm"
           ></p-button>
           <p-button
             label="Spausdinti"
@@ -128,34 +170,34 @@
         </div>
     
     </div>
-    <div class="card right" *ngIf="printTab">
-      <p-toolbar>
+    <div class="" *ngIf="printTab">
+    
         <div class="p-toolbar-group-left">
           <p-button
             label="Generalinė sutartis"
             icon="pi pi-file-pdf"
             iconPos="left"
-            styleClass="p-button-success p-button-outlined p-m-1 btn p-button-sm"
+            styleClass="p-button-success p-m-1 btn p-button-sm"
           ></p-button>
 
           <p-button
             label="Liudijimas"
             icon="pi pi-file-pdf"
             iconPos="left"
-            styleClass="p-button-success p-button-outlined p-m-1 btn p-button-sm"
+            styleClass="p-button-success p-m-1 btn p-button-sm"
           ></p-button>
         </div>
-      </p-toolbar>
+ 
     </div>
 
-    <div class="card right" *ngIf="ImportTab">
-      <p-toolbar>
+    <div class="" *ngIf="ImportTab">
+    
         <div class="p-toolbar-group-left">
           <p-button
             label="Atsisiųsti šabloną"
             icon="pi pi-file-excel"
             iconPos="left"
-            styleClass="p-button-success p-button-outlined p-m-1 btn p-button-sm"
+            styleClass="p-button-success p-m-1 btn p-button-sm"
           ></p-button>
 
           <p-button
@@ -163,7 +205,7 @@
             icon="pi pi-paperclip"
             iconPos="left"
             (click)="filepresent = true"
-            styleClass="p-button-success p-button-outlined p-m-1 btn p-button-sm"
+            styleClass="p-button-success  p-m-1 btn p-button-sm"
           ></p-button>
 
           <div id="dropArea" *ngIf="!filepresent">įkelkite failą</div>
@@ -180,7 +222,7 @@
             styleClass="p-button-success p-button-outlined p-mb-2 p-m-2  btn"
           ></p-button>
         </div>
-      </p-toolbar>
+    
     </div>
 
     <p-table
@@ -197,7 +239,7 @@
       ]"
       resizableColumns="true"
       columnResizeMode="expand"
-      styleClass="p-datatable-gridline p-datatable-sm"
+      styleClass="p-datatable-gridline p-datatable-sm p-datatable-striped"
       dataKey="plId"
     >
       <ng-template pTemplate="caption">
@@ -220,7 +262,7 @@
 
       <ng-template pTemplate="header">
         <tr>
-          <th style="max-width:30px;margin:2px;padding:5px;">
+          <th style="max-width:30px;margin:0px;padding:5px 10px 5px;">
             <p-tableHeaderCheckbox></p-tableHeaderCheckbox>
           </th>
           <th style="max-width:30px;margin:0px;padding:0px;">
@@ -343,32 +385,41 @@
       </ng-template>
 
       <ng-template pTemplate="rowexpansion" let-policy>
+
+      <tr *ngIf="policy.error">
+      <td
+        colspan="2"
+        style="background-color:#ff5252;font-color:#fff;padding:5px;margin:0px"
+      >
+        <span style="color:#fff;">{{ policy.error }}</span>
+      </td>
+    </tr>
+    <tr *ngIf="policy.cancelationDate">
+    <td
+      colspan="2"
+      style="background-color:#ff5252;;padding:5px;margin:0px"
+    ><span style="color:#fff;">
+    Nutraukimo data:
+    {{ policy.cancelationDate }}</span>
+    </td></tr>
+
         <tr>
           <td style="flex:0 0 100%;">
             <div class="p-p-3">
               <table class="p-datatable-gridline" style="width:100%">
-                <tr *ngIf="policy.error">
-                  <td
-                    colspan="2"
-                    style="background-color:#f1f1f1;padding:5px;margin:5px"
-                  >
-                    <span style="color:red;">{{ policy.error }}</span>
-                  </td>
-                </tr>
-
                 <tr>
-                  <th style="background-color:#f1f1f1;padding:3px;width:50%">
+                  <th style="padding:3px;width:50%">
                     Transporto priemonė
                   </th>
-                  <th style="background-color:#f1f1f1;padding:3px">
+                  <th style=";padding:3px">
                     Finansiniai duomenys
                   </th>
                 </tr>
                 <tr>
-                  <td>
+                  <td style="vertical-align:top;">
                     <table>
                       <tr>
-                        <td style="font-size:1.1em">
+                        <td style="font-size:12px;">
                           Transporto priemonės tipas
                         </td>
                         <td>
@@ -410,38 +461,8 @@
                           >
                         </td>
                       </tr>
-                      <tr>
-                        <td>Masė</td>
-                        <td>
-                          <label style="font-weight:500;"
-                            >{{ policy.vehicle.mass }} kg.</label
-                          >
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>Galia</td>
-                        <td>
-                          <label style="font-weight:500;"
-                            >{{ policy.vehicle.power }} kW</label
-                          >
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>Kėbulas</td>
-                        <td>
-                          <label style="font-weight:500;">{{
-                            policy.vehicle.bodyType
-                          }}</label>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>Kuro tipas</td>
-                        <td>
-                          <label style="font-weight:500;">{{
-                            policy.vehicle.fuelType
-                          }}</label>
-                        </td>
-                      </tr>
+                    
+                    
 
                       <tr>
                         <td>Draudimo variantas</td>
@@ -460,17 +481,7 @@
                         </td>
                       </tr>
 
-                      <tr>
-                        <td colspan="2">
-                          <p-button
-                            *ngIf="!policy.cancelationDate && policy.flag == 0"
-                            label="Nutraukti"
-                            icon="pi pi-times"
-                            iconPos="left"
-                            styleClass="p-button-success p-button-outlined p-mb-2 p-m-2  btn p-button-sm"
-                          ></p-button>
-                        </td>
-                      </tr>
+                    
                     </table>
                   </td>
 
@@ -478,7 +489,7 @@
                     <table>
                       <tr></tr>
                       <tr>
-                        <td><label for="MakeModel">Pasirašyta įmoka</label></td>
+                        <td>Pasirašyta įmoka</td>
                         <td>
                           <label style="font-weight:500;"
                             >{{ policy.premium }} EUR</label
@@ -487,7 +498,7 @@
                       </tr>
                       <tr>
                         <td>
-                          <label for="MakeModel">Papildomi draudimai</label>
+                         Papildomi draudimai
                         </td>
                         <td>
                           <label style="font-weight:500;"
@@ -495,8 +506,53 @@
                           >
                         </td>
                       </tr>
-                      <tr>
-                        <td colspan="2">
+                      <tr *ngIf="policy.cancelationDate">
+                      <td style="color:#30d4b6">
+                       Liktutis:
+                      </td>
+                      <td>
+                        <label style="font-weight:500;color:#30d4b6"
+                          >100 EUR</label
+                        >
+                      </td>
+                    </tr>
+                    <tr >
+                    <td style="color:#34a8e5">
+                     Įvykių kiekis:
+                    </td>
+                    <td>
+                      <label style="font-weight:500;color:#34a8e5"
+                        >5</label
+                      >
+                    </td>
+                  </tr>
+
+                  <tr >
+                  <td style="color:#34a8e5">
+                   Sureguliuotų išmokų suma:
+                  </td>
+                  <td>
+                    <label style="font-weight:500;color:#34a8e5"
+                      >500 EUR</label
+                    >
+                  </td>
+                </tr>
+
+                <tr >
+                <td style="color:#34a8e5">
+                 Nesureguliuotų išmokų suma:
+                </td>
+                <td>
+                  <label style="font-weight:500;color:#34a8e5"
+                    >500 EUR</label
+                  >
+                </td>
+              </tr>
+
+
+
+                      <tr >
+                        <td colspan="2" style="padding-top:5px;">
                           <p-table
                             [rowHover]="true"
                             [value]="policy.schedule"
@@ -506,7 +562,7 @@
                               <tr>
                                 <th
                                   pSortableColumn="Nr"
-                                  style="max-width: 120px"
+                                  style="max-width: 120px; mamrgin:2px;"
                                 >
                                   Data
                                 </th>
@@ -514,7 +570,7 @@
                                 <th pSortableColumn="status">Apmokėta suma</th>
                               </tr>
                             </ng-template>
-
+                              
                             <ng-template pTemplate="body" let-Schedule>
                               <tr>
                                 <td style="max-width: 120px">
@@ -528,10 +584,7 @@
                               <span style="font-size:10pt"
                                 >Bendra įmoka: XXX EUR</span
                               ><br />
-                              <span *ngIf="policy.cancelationDate"
-                                >Nutraukimo data:
-                                {{ policy.cancelationDate }}</span
-                              >
+                            
                             </ng-template>
                           </p-table>
                         </td>
@@ -539,6 +592,27 @@
                     </table>
                   </td>
                 </tr>
+                <tr>
+                <td colspan="2">
+                <p-button
+                *ngIf="policy.flag != 1"
+                label="Poliso operacijos" (click)="showDialogPolisoLogas()"
+                styleClass="p-button-success p-m-1 p-pt-0 p-pb-0  btn p-button-sm"
+              ></p-button>
+
+                  <p-button
+                    *ngIf="!policy.cancelationDate && policy.flag == 0"
+                    label="Nutraukti"
+                    styleClass="p-button-success p-m-1 p-pt-0 p-pb-0  btn p-button-sm"
+                  ></p-button>
+
+                  <p-button
+                  *ngIf="policy.flag != 0"
+                  label="Siųsti rizikos vertintojui"
+                  styleClass="p-button-success p-m-1 p-pt-0 p-pb-0  btn p-button-sm"
+                ></p-button>
+                </td>
+              </tr>
               </table>
             </div>
           </td>
@@ -546,7 +620,7 @@
       </ng-template>
       <ng-template pTemplate="summary">
         <div class="p-d-flex p-ai-center p-jc-between">
-          Pažymėta polisų - 0 , įmoka - 0 EUR.
+          Pažymėta polisų - 0 , įmoka - 0 EUR, įvykių kiekis - 0, Išmokų suma (sureguliuotų ir nesureguliuotų) - 0 EUR
         </div>
       </ng-template>
     </p-table>

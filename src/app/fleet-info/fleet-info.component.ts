@@ -18,6 +18,7 @@ export class FleetInfoComponent implements OnInit {
   panel1: number = 100;
   panel2: number = 0;
   displayADD: boolean = false;
+  displayLOG: boolean = false;
 
   constructor(private PolicyListService: PolicyListService) { }
 
@@ -67,6 +68,11 @@ export class FleetInfoComponent implements OnInit {
   showDialogAddVehicles() {
     this.displayADD = true;
 }
+
+showDialogPolisoLogas() {
+  this.displayLOG = true;
+}
+
 
 paste(event: ClipboardEvent){
   let clipboardData = event.clipboardData;

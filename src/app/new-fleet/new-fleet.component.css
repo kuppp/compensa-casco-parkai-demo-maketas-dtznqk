@@ -1,9 +1,12 @@
-:host >>> table td,
-th {
+:host >>> table td {
   margin: 2px;
-  font-size: 10pt;
-  padding: 1px;
+
+  padding: 2px;
+  border:0px;
+
+  font-size: 12px;
 }
+
 
 :host ::ng-deep .p-datatable .p-datatable-tbody > tr > td {
   border: 1px solid #f1f1f1;
@@ -37,4 +40,8 @@ input {
   right:45px;
   position: absolute;
   z-index: -1;
+}
+:host >>> table th {
+  border:0px;
+  margin:0px;
 }
