@@ -24,7 +24,7 @@
   :host >>> .p-button.p-button-success:hover {
     background: #646464;
   }
-  
+
   #dropArea {
     
     border: 2px dashed rgb(0,134,65);
@@ -41,3 +41,14 @@
 #dropArea.hover {
     background-color: #CCCCCC;
 }
+
+:host >>> table th {
+  padding: 10px 30px;
+  background-color:#9e9e9e;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 10px;
+text-align: left;
+}
+
