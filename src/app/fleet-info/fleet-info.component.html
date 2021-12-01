@@ -78,9 +78,9 @@
 
 <p-tabView>
   <p-tabPanel header="Parkas">
-    <div class="card right">
-      <p-toolbar>
-        <div class="p-toolbar-group-left">
+    <div class="p-b-4">
+   
+        <div class="">
           <p-button
             label="Įtraukti"
             icon="pi pi-plus"
@@ -126,7 +126,7 @@
             styleClass="p-button-success  p-m-1 btn p-button-sm"
           ></p-button>
         </div>
-      </p-toolbar>
+    
     </div>
     <div class="card right" *ngIf="printTab">
       <p-toolbar>
@@ -276,8 +276,7 @@
             Valstybinis numeris
           </th>
           <th pResizableColumn>VIN</th>
-          <th pResizableColumn style=" white-space: pre-wrap;">
-            Signalizacijos lygis
+          <th pResizableColumn style="white-space: pre-wrap;">Sign.lygis
           </th>
           <th pResizableColumn>Vertė</th>
           <th pResizableColumn>Įmoka</th>
@@ -305,17 +304,17 @@
           </td>
           <td style="max-width:25px;" ngClass="plStatus{{ policy.flag }}">
             <i
-              Class="pi pi-circle-fill"
+              Class="pi pi-check"
               *ngIf="policy.flag == 0"
               pTooltip="Polisas patvirtintas ir be klaidų"
             ></i>
             <i
-              Class="pi pi-circle-fill"
+              Class="pi pi-times"
               *ngIf="policy.flag == 1"
               pTooltip="Polisas su klaidomis"
             ></i>
             <i
-              Class="pi pi-circle-fill"
+              Class="pi pi-spinner"
               *ngIf="policy.flag == 2"
               pTooltip="Pasiūlymas paruoštas ir galima sugeneruoti"
             ></i>

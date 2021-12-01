@@ -18,7 +18,7 @@ import * as Global from './global-variables';
   styleUrls: ['./app.component.css'],
   styles: [`
         :host ::ng-deep  .row-not-imported {
-            background-color: rgba(5,240,0,.05) !important;
+            background-color: rgb(238, 254, 255) !important;
             disabled: true;
         }`]
 })

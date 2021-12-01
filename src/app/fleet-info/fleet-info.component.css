@@ -1,14 +1,14 @@
 .plStatus1 {
-  color: red;
+  color: #ff5252;
   font-weight: 800;
 }
 
 .plStatus0 {
-  color: green;
+  color: #30d4b6 ;
 }
 
 .plStatus2 {
-  color: rgb(9, 0, 128);
+  color: #34a8e5;
 }
 
 :host >>> .p-button {
