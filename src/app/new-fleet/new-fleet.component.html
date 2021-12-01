@@ -152,11 +152,11 @@ styleClass="p-button-primary p-m-1 btn"
     </tr>
     <tr style="text-align:left">
     <td style="border:1px solid #f1f1f1;padding:3px">Mokėjimų skaičius:</td>
-    <td style="border:1px solid #f1f1f1;padding:3px"><input disabled style="width:100%" value="4"></td>
+    <td style="border:1px solid #f1f1f1;padding:3px"><select  style="width:50%" value="4"><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="6">6</option></select></td>
   </tr>
     <tr style="text-align:left">
       <td style="border:1px solid #f1f1f1;padding:3px">Pirmos įmokos atidėjimas:</td>
-      <td style="border:1px solid #f1f1f1;padding:3px"><input disabled style="width:100%" value="2"></td>
+      <td style="border:1px solid #f1f1f1;padding:3px"><select  style="width:50%" value="4"><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option></select></td>
     </tr>
 
 
@@ -224,36 +224,13 @@ styleClass="p-button-primary p-m-1 btn"
 
   <p-tabPanel header="Mokėjimo grafikas" >
 
-  <div class="p-field p-grid">
-  <label for="lastname4" class="p-col-12 p-mb-2 p-md-2 p-mb-md-0"
-    >Mokėjimų skaičius</label
-  >
-
-  <div class="p-col-12 p-md-10">
-  <p-dropdown [options]="paymentSchedule" [(ngModel)]="selectedCityCode" optionLabel="number" optionValue="code"></p-dropdown>
-  
-  </div>
-  <div class="p-col-6 p-md-10"></div>
-</div>
-
-<div class="p-field p-grid">
-<label for="lastname4" class="p-col-12 p-mb-2 p-md-2 p-mb-md-0"
-  >Pirmos įmokos atidėjimas</label
->
-
-<div class="p-col-12 p-md-10">
-<p-dropdown [options]="paymentSchedule" [(ngModel)]="selectedCityCode" optionLabel="number" optionValue="code"></p-dropdown>
-
-</div>
-<div class="p-col-6 p-md-10"></div>
-</div>
-
 <p>Mokėjimo grafikas;</p>
 
     <p-table
       [rowHover]="true"
       [value]="paymentSchedule"
       styleClass="p-datatable-sm"
+      style="width:600px;"
     >
       <ng-template pTemplate="header">
         <tr>
