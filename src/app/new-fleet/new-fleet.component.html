@@ -1,0 +1,411 @@
+<p-dialog header="Title" [(visible)]="displayCRM">
+<ng-template pTemplate="header">
+Patvirtinti nestandartines sąlygas
+</ng-template>
+
+<div class="p-fluid p-formgrid p-grid">
+<div class="p-field p-col-12">
+    <label for="address">Pastabos</label>
+    <textarea id="address" type="text" rows="4" pInputTextarea></textarea>
+</div>
+</div>
+
+<ng-template pTemplate="footer">
+<p-button
+label="Perduoti suderinimui"
+icon="pi pi-reply"
+iconPos="left"
+styleClass="p-button-primary p-m-1 btn"
+(click)="hideDialogCRM()"
+></p-button>
+</ng-template>
+</p-dialog>
+
+
+
+
+<p-tabView [(activeIndex)]="index">
+  <p-tabPanel header="Parko duomenys">
+<div class="p-grid">
+  <div class="p-col"><label for="policyholder" class="p-col-3">Draudėjas</label></div>
+  <div class="p-col"><input id="policyholder" type="text" pInputText value="UAB TRANSPORTO ĮMONĖ" style="width:100%" /></div>
+  <div class="p-col"><label for="policyholdercode" class="p-col-3 ">Kodas</label></div>
+  <div class="p-col"><input id="policyholder" type="text" pInputText value="10999939"/></div>
+</div>
+
+<div class="p-grid">
+<div class="p-col"><label for="policyholder" class="p-col-3">Draudikas</label></div>
+<div class="p-col"><input id="policyholder" type="text" pInputText value="COMPENSA LIETUVA" style="width:100%" /></div>
+<div class="p-col"><label for="policyholdercode" class="p-col-3 ">Kodas</label></div>
+<div class="p-col"><input id="policyholder" type="text" pInputText value="1100000001"/></div>
+</div>
+
+<div class="p-grid">
+<div class="p-col"><label for="policyholder" class="p-col-3">Mokėtojas</label></div>
+<div class="p-col"><input id="policyholder" type="text" pInputText value="SEB LIZINGAS" style="width:100%" /></div>
+<div class="p-col"><label for="policyholdercode" class="p-col-3 ">Kodas</label></div>
+<div class="p-col"><input id="policyholder" type="text" pInputText value="11110000"/></div>
+</div>
+<div class="p-grid">
+<div class="p-col"><label for="policyholder" class="p-col-3">Išrašymo data</label></div>
+<div class="p-col"><input id="policyholder" type="text" pInputText value="2021-12-31" disabled /></div>
+<div class="p-col"></div>
+<div class="p-col"></div>
+</div>
+
+<div class="p-grid">
+<div class="p-col"><label for="policyholder" class="p-col-3">Galiojimo datos</label></div>
+<div class="p-col"><input
+  style="width:100px"
+  class="p-mr-2"
+  id="lastname4"
+  type="text"
+  pInputText
+  value="2021-12-31"
+  />
+  <input
+  style="width:100px"
+  type="text"
+  pInputText
+  value="2021-12-31"
+  /></div>
+<div class="p-col"></div>
+<div class="p-col"></div>
+</div>
+
+
+<div class="p-grid">
+<div class="p-col-3"><label for="policyholder" class="p-col-3">Komisiniai</label></div>
+<div class="p-col-9">
+<table >
+<tr style="text-align:left"> 
+  <th style="border:1px solid #f1f1f1;padding:3px; background-color:#f1f1f1">Rūšis</th>
+  <th style="border:1px solid #f1f1f1;padding:3px; background-color:#f1f1f1">Tarifas</th>
+</tr>
+<tr>
+  <td style="border:1px solid #f1f1f1;padding:3px">CASCO parkai transporto draudimas</td>
+  <td style="border:1px solid #f1f1f1;padding:3px">0.02</td>
+</tr>
+<tr>
+<td style="border:1px solid #f1f1f1;padding:3px">CASCO parkai Vairuotojas ir keleiviai</td>
+<td style="border:1px solid #f1f1f1;padding:3px">0.02</td>
+</tr>
+<tr>
+<td style="border:1px solid #f1f1f1;padding:3px">CASCO parkai pagalba kelyje</td>
+<td style="border:1px solid #f1f1f1;padding:3px">0.00</td>
+</tr>
+</table>
+</div>
+</div>
+
+
+
+    <div class="btn-vieta"> 
+    <p-button
+    label="Toliau"
+    styleClass="btn btn-apacioje p-button-sm"
+       (click)=" newTabConditions = true; this.index = 1;"
+    ></p-button>
+    </div>
+
+  </p-tabPanel>
+ 
+
+  <p-tabPanel header="Draudimo sąlygos" >
+    <h3>Standartinės draudimo sąlygos</h3>
+
+    <table style="width:50%;border-collapse:collapse;">
+    <tr style="text-align:left;"> 
+      <td style="border:1px solid #f1f1f1;padding:3px;  width:30%">Galiojimo teritorija</td>
+      <td style="border:1px solid #f1f1f1;padding:3px" ><input disabled style="width:100%" value="Europa"/> </td>
+    </tr>
+    <tr style="text-align:left">
+    <td style="border:1px solid #f1f1f1;padding:3px;">Paskirtis</td>
+      <td style="border:1px solid #f1f1f1;padding:3px" ><input disabled style="width:100%" value="Nepadidinta rizika"/></td>
+    </tr>
+    <tr style="text-align:left">
+    <td style="border:1px solid #f1f1f1;padding:3px; " colspan=2 >TP nusidėvėjimas</td>
+    </tr>
+    <tr style="text-align:left">
+    <td style="border:1px solid #f1f1f1;padding:3px">Draudiko pasirinkimu:</td>
+    <td style="border:1px solid #f1f1f1;padding:3px"><input disabled style="width:100%" value="TP virš 7 m."/></td>
+  </tr>
+    <tr style="text-align:left">
+      <td style="border:1px solid #f1f1f1;padding:3px">Draudėjo pasirinkimu:</td>
+      <td style="border:1px solid #f1f1f1;padding:3px"><input disabled style="width:100%" value="TP iki 6 m."/></td>
+    </tr>
+
+    <tr style="text-align:left">
+    <td style="border:1px solid #f1f1f1;padding:3px; " colspan=2 >TP remontas</td>
+    </tr>
+    <tr style="text-align:left">
+    <td style="border:1px solid #f1f1f1;padding:3px">Draudiko pasirinkimu:</td>
+    <td style="border:1px solid #f1f1f1;padding:3px"><input disabled style="width:100%" value="TP virš 7 m."></td>
+  </tr>
+    <tr style="text-align:left">
+      <td style="border:1px solid #f1f1f1;padding:3px">Draudėjo pasirinkimu:</td>
+      <td style="border:1px solid #f1f1f1;padding:3px"><input disabled style="width:100%" value="TP iki 6 m."></td>
+    </tr>
+
+    <tr style="text-align:left">
+    <td style="border:1px solid #f1f1f1;padding:3px; " colspan=2 >Mokėjimo grafikas</td>
+    </tr>
+    <tr style="text-align:left">
+    <td style="border:1px solid #f1f1f1;padding:3px">Mokėjimų skaičius:</td>
+    <td style="border:1px solid #f1f1f1;padding:3px"><input disabled style="width:100%" value="4"></td>
+  </tr>
+    <tr style="text-align:left">
+      <td style="border:1px solid #f1f1f1;padding:3px">Pirmos įmokos atidėjimas:</td>
+      <td style="border:1px solid #f1f1f1;padding:3px"><input disabled style="width:100%" value="2"></td>
+    </tr>
+
+
+  </table>
+
+
+
+<br>
+
+  <table style="width:100%">
+    <tr>
+      <th style="text-align:left;border:1px solid #f1f1f1;padding:3px; background-color:#f1f1f1">TP Tipas</th>
+      <th style="text-align:left;border:1px solid #f1f1f1;padding:3px; background-color:#f1f1f1">Tarifas</th>
+      <th style="text-align:left;border:1px solid #f1f1f1;padding:3px; background-color:#f1f1f1">Išskaita rizikoms, EUR</th>
+      <th style="text-align:left;border:1px solid #f1f1f1;padding:3px; background-color:#f1f1f1">Išskaita vagystei, %</th>
+      <th style="text-align:left;border:1px solid #f1f1f1;padding:3px; background-color:#f1f1f1">Minimali įmoka, EUR</th>    
+      <th style="text-align:left;border:1px solid #f1f1f1;padding:3px; background-color:#f1f1f1">Draudimo variantas</th>  
+      <th style="text-align:left;border:1px solid #f1f1f1;padding:3px; background-color:#f1f1f1">Vairuotojas ir keleiviai</th>  
+      <th style="text-align:left;border:1px solid #f1f1f1;padding:3px; background-color:#f1f1f1">Pagalba kelyje</th>  
+    </tr>
+    <tr>
+      <td style="border:1px solid #f1f1f1;padding:3px">Lengvieji automobiliai</td>
+      <td style="border:1px solid #f1f1f1;padding:3px">0.25</td>
+      <td style="border:1px solid #f1f1f1;padding:3px">100</td>
+      <td style="border:1px solid #f1f1f1;padding:3px">10</td>
+      <td style="border:1px solid #f1f1f1;padding:3px">50</td>
+      <td style="border:1px solid #f1f1f1;padding:3px"><a href="https://www.compensa.lt/uploads/ECB/content_1593609690/savanoriskojo-transporto-priemoniu-draudimo-kasko-informacinis-dokumentas_2020_5503.pdf" target="_blank">Išplėstinis</a></td>
+      <td style="border:1px solid #f1f1f1;padding:3px">Taip</td>
+      <td style="border:1px solid #f1f1f1;padding:3px">Išplėstinė</td>
+    </tr>
+    <tr>
+    <td style="border:1px solid #f1f1f1;padding:3px">Krovininiai automobiliai</td>
+    <td style="border:1px solid #f1f1f1;padding:3px">0.25</td>
+    <td style="border:1px solid #f1f1f1;padding:3px">80</td>
+    <td style="border:1px solid #f1f1f1;padding:3px">10</td>
+    <td style="border:1px solid #f1f1f1;padding:3px">350</td>
+    <td style="border:1px solid #f1f1f1;padding:3px"><a href="https://www.compensa.lt/uploads/ECB/content_1593609690/savanoriskojo-transporto-priemoniu-draudimo-kasko-informacinis-dokumentas_2020_5503.pdf" target="_blank">Pagrindinis</a></td>
+    <td style="border:1px solid #f1f1f1;padding:3px">Ne</td>
+    <td style="border:1px solid #f1f1f1;padding:3px">Ne</td>
+  </tr>
+  </table>
+    <p>Norint sudetinti kitas sąlygas, perduokite parko draudimą rizikos vertintojui.</p>
+
+    <br />
+    
+      <div class="btn-vieta">
+      <p-button
+      label="Perduoti suderinimui"
+      styleClass="p-mr-1 btn p-button-sm btn-apacioje"
+      (click)="showDialogCRM()"
+    ></p-button>
+
+
+        <p-button
+          label="Toliau"
+          styleClass="btn p-mr-1 p-button-sm btn-apacioje"
+          (click)="newPaymentSchedule = true; this.index = 2"
+        ></p-button>
+
+      
+
+      </div>
+   
+  </p-tabPanel>
+
+  <p-tabPanel header="Mokėjimo grafikas" >
+
+  <div class="p-field p-grid">
+  <label for="lastname4" class="p-col-12 p-mb-2 p-md-2 p-mb-md-0"
+    >Mokėjimų skaičius</label
+  >
+
+  <div class="p-col-12 p-md-10">
+  <p-dropdown [options]="paymentSchedule" [(ngModel)]="selectedCityCode" optionLabel="number" optionValue="code"></p-dropdown>
+  
+  </div>
+  <div class="p-col-6 p-md-10"></div>
+</div>
+
+<div class="p-field p-grid">
+<label for="lastname4" class="p-col-12 p-mb-2 p-md-2 p-mb-md-0"
+  >Pirmos įmokos atidėjimas</label
+>
+
+<div class="p-col-12 p-md-10">
+<p-dropdown [options]="paymentSchedule" [(ngModel)]="selectedCityCode" optionLabel="number" optionValue="code"></p-dropdown>
+
+</div>
+<div class="p-col-6 p-md-10"></div>
+</div>
+
+<p>Mokėjimo grafikas;</p>
+
+    <p-table
+      [rowHover]="true"
+      [value]="paymentSchedule"
+      styleClass="p-datatable-sm"
+    >
+      <ng-template pTemplate="header">
+        <tr>
+          <th pSortableColumn="Nr" style="width: 50px">Nr.</th>
+          <th pSortableColumn="status">Data</th>
+        </tr>
+      </ng-template>
+
+      <ng-template pTemplate="body" let-Schedule>
+        <tr>
+          <td style="width: 50px">
+            {{ Schedule.number }}
+          </td>
+          <td>{{ Schedule.date }}</td>
+        </tr>
+      </ng-template>
+    </p-table>
+<br>
+   
+    <div class="btn-vieta">
+      <p-button
+        label="Toliau"
+        styleClass="btn-apacioje p-mr-1 btn p-button-sm"
+        (click)="newEmptyPark = true; this.index = 3"
+      ></p-button>
+    </div>
+
+
+  </p-tabPanel>
+  <p-tabPanel header="Parkas" >
+  <h3><b>UAB TRANSPORTO ĮMONĖ</b> parko draudimas</h3> 
+  <h5>Nr: PARK 00000002</h5>
+  
+<div class="card right">
+       <p-toolbar>
+        <div class="p-toolbar-group-left">
+          <p-button
+            label="Įtraukti naują"
+            icon="pi pi-plus"
+            iconPos="left" (click)="showDialogAddVehicles();"
+            styleClass="p-button-success p-button-outlined p-m-1 btn p-button-sm"
+          ></p-button>
+          <p-button
+            label="Importuoti"
+            icon="pi pi-arrow-circle-down"
+            iconPos="left"
+            (click)="ImportTab = true"
+            styleClass="p-button-success p-button-outlined p-m-1  btn p-button-sm"
+          ></p-button>
+
+          <p-splitButton
+            label="Pažymėtiems"
+            icon="pi pi-ellipsis-v"
+            (onClick)="save()"
+            [model]="actionMenuItems"
+            styleClass=" p-button-outlined   p-m-1 btn p-button-sm"
+          >
+          </p-splitButton>
+          <p-splitButton
+            label="Spausdinti"
+            icon="pi "
+            (onClick)="save()"
+            [model]="printMenuItems"
+            styleClass="p-button-outlined   p-m-1 btn p-button-sm"
+          >
+          </p-splitButton>
+        </div>
+      </p-toolbar>
+</div>
+
+  <p-table
+  [value]="policies"
+  [scrollable]="true"
+  scrollHeight="450px"
+  [rowHover]="true"
+  resizableColumns="true"
+  columnResizeMode="expand"
+  styleClass="p-datatable-gridline"
+>
+  <ng-template pTemplate="caption">
+    <div class="table-header">
+      Transporto priemonės
+      <span class="p-input-icon-left">
+        <i class="pi pi-search"></i>
+        <input
+          pInputText
+          type="text"
+          (input)="dt.filterGlobal($event.target.value, 'contains')"
+          placeholder="Paieška"
+        />
+      </span>
+    </div>
+  </ng-template>
+
+  <ng-template pTemplate="header">
+    <tr>
+      <th style="max-width:50px;">
+        <p-tableHeaderCheckbox></p-tableHeaderCheckbox>
+      </th>
+      <th pResizableColumn pSortableColumn="policy">Poliso numeris</th>
+      <th pResizableColumn pSortableColumn="status">Statusas</th>
+      <th pResizableColumn pSortableColumn="beginDate">Pradžia</th>
+      <th pResizableColumn pSortableColumn="endDate">Pabaiga</th>
+      <th pResizableColumn pSortableColumn="vehicle.type">Tipas</th>
+      <th pResizableColumn pSortableColumn="vehicle.make">Markė</th>
+      <th pResizableColumn pSortableColumn="vehicle.model">Modelis</th>
+      <th pResizableColumn>Valstybinis numeris</th>
+      <th pResizableColumn>VIN</th>
+      <th pResizableColumn>Vertė</th>
+      <th pResizableColumn>Įmoka</th>
+      <th pResizableColumn pSortableColumn="additionalInsurance.name">Papildomi dr.</th>
+      <th pResizableColumn>Papild. dr. įmoka</th>
+    </tr>
+  </ng-template>
+
+  <ng-template pTemplate="body" let-policy>
+    <tr
+      class="p-selectable-row"
+      [ngClass]="{ 'row-not-imported': policy.status == 0 }"
+    >
+      <td style="max-width: 50px">
+        <p-tableCheckbox
+          [value]="policy"
+          *ngIf="policy.status == 2"
+        ></p-tableCheckbox>
+      </td>
+      <td>{{ policy.policy }}</td>
+      <td>
+        <p-tag *ngIf="policy.status == 1" severity="danger">
+          {{ policy.error }}
+        </p-tag>
+      </td>
+      <td>{{ policy.beginDate }}</td>
+      <td>{{ policy.endDate }}</td>
+      <td>{{ policy.vehicle.type }}</td>
+      <td>{{ policy.vehicle.make }}</td>
+      <td>{{ policy.vehicle.model }}</td>
+      <td>{{ policy.vehicle.plateNo }}</td>
+      <td>{{ policy.vehicle.vinNo }}</td>
+      <td>{{ policy.vehicle.value }}</td>
+      <td>{{ policy.premium }}</td>
+      <td>{{ policy.additionalInsurance.name }}</td>
+      <td>
+        {{ policy.additionalInsurance.premium }}
+      </td>
+    </tr>
+  </ng-template>
+</p-table>
+
+
+
+
+  </p-tabPanel>
+
+</p-tabView>

@@ -1,0 +1,33 @@
+
+:host >>> .btn {
+  background-color: rgb(0,134,65);
+  border-color: rgb(0,134,65);
+  }
+
+  :host >>> label,
+  input {
+    font-weight: 600; padding:2px; font-size: 10pt;
+  }
+
+  :host >>> p-table td{
+    font-size: 10pt;
+  }
+  :host >>> p-table th{
+    font-size: 10pt;
+  }
+
+  :host >>> table td{
+    font-size: 10pt;
+  }
+
+
+  :host >>> .card {
+    padding: 0px 40px 8px ;
+    position: relative;
+    width: 100%;
+  }
+
+  :host >>> .p-toolbar {
+    background-color: white;
+
+  }

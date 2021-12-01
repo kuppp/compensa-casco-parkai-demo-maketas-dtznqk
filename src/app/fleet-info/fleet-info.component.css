@@ -1,0 +1,44 @@
+.plStatus1 {
+  color: red;
+  font-weight: 800;
+}
+
+.plStatus0 {
+  color: green;
+}
+
+.plStatus2 {
+  color: rgb(9, 0, 128);
+}
+
+:host >>> .p-button {
+  border-color: rgb(0,134,65);
+  color: rgb(0,134,65);
+  background-color:#f1f1f1;
+  }
+
+
+
+  
+:host >>> .p-button.p-button-success.p-button-outlined {
+  border-color: rgb(0,134,65);
+  color: rgb(0,134,65);
+  background-color:#f1f1f1;
+  }
+
+  #dropArea {
+    
+    border: 2px dashed rgb(0,134,65);
+    float: left;
+    font-size: 1em;
+    height: 40px;
+    margin: 5px;
+    padding:5px;
+    position: relative;
+    text-align: center;
+    width: 600px;
+    color:rgb(0,134,65);
+}
+#dropArea.hover {
+    background-color: #CCCCCC;
+}

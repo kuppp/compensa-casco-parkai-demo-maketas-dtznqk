@@ -1,0 +1,40 @@
+:host >>> table td,
+th {
+  margin: 2px;
+  font-size: 10pt;
+  padding: 1px;
+}
+
+:host ::ng-deep .p-datatable .p-datatable-tbody > tr > td {
+  border: 1px solid #f1f1f1;
+  padding: 2px;
+}
+
+:host >>> label,
+input {
+  font-weight: 600; padding:2px; font-size: 10pt;
+}
+
+:host >>> .btn {
+  background-color: rgb(0, 134, 65);
+  border: 0px;
+}
+
+:host >>> .p-button.p-button-success.p-button-outlined {
+  border-color: rgb(0, 134, 65);
+  color: rgb(0, 134, 65);
+  background-color: #f1f1f1;
+}
+
+
+:host >>> .btn-apacioje {
+  padding: 0 38px;min-width: 160px;
+ position:relative;
+}
+
+:host >>> .btn-vieta{
+  bottom: -10px;
+  right:45px;
+  position: absolute;
+  z-index: -1;
+}
