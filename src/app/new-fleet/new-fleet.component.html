@@ -81,8 +81,8 @@ styleClass="p-m-1 btn"
 <div class="p-col-9">
 <table >
 <tr style="text-align:left"> 
-  <th style="border:1px solid #f1f1f1;padding:3px; background-color:#f1f1f1">Rūšis</th>
-  <th style="border:1px solid #f1f1f1;padding:3px; background-color:#f1f1f1">Tarifas</th>
+  <th style="border:1px solid #f1f1f1;padding:3px; ">Rūšis</th>
+  <th style="border:1px solid #f1f1f1;padding:3px; b">Tarifas</th>
 </tr>
 <tr>
   <td style="border:1px solid #f1f1f1;padding:3px">CASCO parkai transporto draudimas</td>
@@ -165,13 +165,27 @@ styleClass="p-m-1 btn"
 
     <div class="p-grid">
       <div class="p-col"><label for="policyholder" class="p-col-3">Mokėjimų skaičius:</label></div>
-      <div class="p-col"><label for="policyholder" class="p-col-3"><select  style="width:50%" value="4"><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="6">6</option></select></label></div>
+      <div class="p-col"></div>
+      <div class="p-col"></div>
+      <div class="p-col"></div>
     </div>
     <div class="p-grid">
-      <div class="p-col"><label for="policyholdercode" class="p-col-3 ">Pirmos įmokos atidėjimas:</label></div>
-      <div class="p-col"><label for="policyholder" class="p-col-3"><select  style="width:50%" value="4"><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="6">6</option></select></label></div>
-    
-
+      <div class="p-col"><select class="p-listbox"  style="width:100%;padding:5px;" value="4"><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="6">6</option></select></div>
+      <div class="p-col"></div>
+      <div class="p-col"></div>
+      <div class="p-col"></div>
+    </div>
+    <div class="p-grid">
+      <div class="p-col"><label for="policyholder" class="p-col-3">Pirmos įmokos atidėjimas:  <i class="pi pi-question-circle" pTooltip="Pirmos įmokos mokėjimo dienos atidėjimas dienomis, nuo poliso pradžios datos"></i></label></div>
+      <div class="p-col"></div>
+      <div class="p-col"></div>
+      <div class="p-col"></div>
+    </div>
+    <div class="p-grid">
+      <div class="p-col"><select class="p-listbox"  style="width:100%;padding:5px;" value="4"><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="6">6</option></select></div>
+      <div class="p-col"></div>
+      <div class="p-col"></div>
+      <div class="p-col"></div>
     </div>
 
 
@@ -181,14 +195,14 @@ styleClass="p-m-1 btn"
 
   <table style="width:100%">
     <tr>
-      <th style="text-align:left;border:1px solid #f1f1f1;padding:3px; background-color:#f1f1f1">TP Tipas</th>
-      <th style="text-align:left;border:1px solid #f1f1f1;padding:3px; background-color:#f1f1f1">Tarifas</th>
-      <th style="text-align:left;border:1px solid #f1f1f1;padding:3px; background-color:#f1f1f1">Išskaita rizikoms, EUR</th>
-      <th style="text-align:left;border:1px solid #f1f1f1;padding:3px; background-color:#f1f1f1">Išskaita vagystei, %</th>
-      <th style="text-align:left;border:1px solid #f1f1f1;padding:3px; background-color:#f1f1f1">Minimali įmoka, EUR</th>    
-      <th style="text-align:left;border:1px solid #f1f1f1;padding:3px; background-color:#f1f1f1">Draudimo variantas</th>  
-      <th style="text-align:left;border:1px solid #f1f1f1;padding:3px; background-color:#f1f1f1">Vairuotojas ir keleiviai</th>  
-      <th style="text-align:left;border:1px solid #f1f1f1;padding:3px; background-color:#f1f1f1">Pagalba kelyje</th>  
+      <th style="text-align:left;border:1px solid #f1f1f1;padding:3px;">TP Tipas</th>
+      <th style="text-align:left;border:1px solid #f1f1f1;padding:3px;">Tarifas</th>
+      <th style="text-align:left;border:1px solid #f1f1f1;padding:3px; ">Išskaita rizikoms, EUR</th>
+      <th style="text-align:left;border:1px solid #f1f1f1;padding:3px;">Išskaita vagystei, %</th>
+      <th style="text-align:left;border:1px solid #f1f1f1;padding:3px;">Minimali įmoka, EUR</th>    
+      <th style="text-align:left;border:1px solid #f1f1f1;padding:3px; ">Draudimo variantas</th>  
+      <th style="text-align:left;border:1px solid #f1f1f1;padding:3px; ">Vairuotojas ir keleiviai</th>  
+      <th style="text-align:left;border:1px solid #f1f1f1;padding:3px; ">Pagalba kelyje</th>  
     </tr>
     <tr>
       <td style="border:1px solid #f1f1f1;padding:3px">Lengvieji automobiliai</td>
@@ -211,7 +225,7 @@ styleClass="p-m-1 btn"
     <td style="border:1px solid #f1f1f1;padding:3px">Ne</td>
   </tr>
   </table>
-    <p>Norint sudetinti kitas sąlygas, perduokite parko draudimą rizikos vertintojui.</p>
+    <p style="font-size:12px">Norint sudetinti kitas sąlygas, perduokite parko draudimą rizikos vertintojui.</p>
 
     <br />
     
