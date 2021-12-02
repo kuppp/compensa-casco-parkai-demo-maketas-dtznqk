@@ -23,7 +23,7 @@ letter-spacing: 0.075e;text-align: center;    padding: 10px 5px;font-size: 14px;
       label="Skaičiuoti drausmingumą"
       icon="pi pi-shield"
       iconPos="left"
-      (click)="page = 'new-fleet';blankScreen = true;"
+      (click)="page = 'fleet-bm';blankScreen = true;"
       styleClass="p-button-secondary p-m-1 btn p-button-sm"
     ></p-button>
       <p-button
@@ -42,6 +42,7 @@ letter-spacing: 0.075e;text-align: center;    padding: 10px 5px;font-size: 14px;
   <app-fleet-info></app-fleet-info> 
 </div>
 </div>
+
 <div class="card">
 <div *ngIf="page == 'open-fleet'">
   
@@ -275,6 +276,8 @@ styleClass="p-datatable-gridline p-datatable-sm"
 
 
 </p-tabPanel>
+
+
 </p-tabView>
 
   </div>
@@ -285,4 +288,149 @@ styleClass="p-datatable-gridline p-datatable-sm"
     <app-new-fleet></app-new-fleet>
   </div>
 </div>
+
+<div class="card">
+
+  <div *ngIf="page == 'fleet-bm'">
+    <p-tabView>
+
+      <p-tabPanel header="Skaičiuoti drausmingumą">
+        <div class="p-toolbar-group-left">
+          <p-button
+            label="Importuoti"
+            icon="pi pi-file-excel"
+            iconPos="left"
+            styleClass="p-button-success p-m-1 btn p-button-sm"
+          ></p-button>
+
+        </div>
+
+       <label for="policyholder" class="p-col-3">Savininko kodas</label>
+       
+         <BR>
+        <input
+            id="lastname4"
+            type="text"
+            pInputText
+            disabled
+            value="33000003330"
+            style="width:400px;padding:5px;margin:5px"
+          />
+          <BR>
+       
+
+        <table class="borders" style="border-collapse:collapse;">
+          <tr>
+            <th style=";padding:3px;width:100px;">
+              Valst. nr.
+            </th>
+            <th style=";padding:3px;">VIN</th>
+         
+            <th style="padding:3px;">AVSK</th>
+            <th style=";padding:3px;">DRSK</th>
+            <th style="padding:3px;">DK</th>
+            <th style="padding:3px;">Koef.</th>
+          </tr>
+          <tr>
+            <td style="width:100px;"><input type="text" style="width:100px" value="VLS009"/></td>
+            <td><input type="text" /></td>
+            <td style="width:100px;"><input type="text" style="width:100px;" disabled  value="0"/></td>
+            <td style="width:100px;"><input type="text" style="width:100px;" disabled value="355"/></td>
+            <td><input type="text" disabled value="D1"/></td>
+
+      
+            <td><input type="text" disabled value="0.21"/></td>
+          </tr>
+          <tr>
+            <td style="width:100px;"><input type="text" style="width:100px;" /></td>
+            <td><input type="text" /></td>
+            <td style="width:100px;"><input type="text" style="width:100px;" disabled/></td>
+            <td style="width:100px;"><input type="text" style="width:100px;" disabled/></td>
+            <td><input type="text" disabled/></td>
+            <td><input type="text" disabled/></td>
+
+          </tr>
+          <tr>
+            <td style="width:100px;"><input type="text" style="width:100px;" /></td>
+            <td><input type="text" /></td>
+            <td style="width:100px;"><input type="text" style="width:100px;" disabled/></td>
+            <td style="width:100px;"><input type="text" style="width:100px;" disabled/></td>
+            <td><input type="text" disabled/></td>
+            <td><input type="text" disabled /></td>
+
+          </tr>
+          <tr>
+            <td style="width:100px;"><input type="text" style="width:100px;" /></td>
+            <td><input type="text" /></td>
+            <td style="width:100px;"><input type="text" style="width:100px;" disabled/></td>
+            <td style="width:100px;"><input type="text" style="width:100px;" disabled/></td>
+            <td><input type="text" disabled /></td>
+            <td><input type="text" disabled/></td>
+
+          </tr>
+        </table>
+        <div class="p-toolbar-group-left">
+
+
+          <p-button
+            label="Vykdyti užklausas"
+            styleClass="p-button-success  p-m-1 btn p-button-sm"
+          ></p-button>
+
+        </div>
+      </p-tabPanel>
+      <p-tabPanel header="Koeficientai">
+        <table class="borders" style="border-collapse:collapse;">
+          <tr>
+            <th style=";padding:3px;">DRSK [</th>
+            <th style=";padding:3px;">] DRSK</th>
+            <th style="padding:3px;">AVSK [</th>
+            <th style="padding:3px;">] AVSK</th>
+            <th style="padding:3px;">DK</th>
+            <th style="padding:3px;">KOEF</th>
+          </tr>
+          <tr>
+            <td style="width:100px;"><input type="text" style="width:100px" value="0" disabled/></td>
+            <td><input type="text" value="355" disabled/></td>
+            <td style="width:100px;"><input type="text" style="width:100px;" disabled  value="0"/></td>
+            <td style="width:100px;"><input type="text" style="width:100px;" disabled value="0"/></td>
+            <td><input type="text" disabled value="D1"/></td>
+            <td><input type="text" disabled value="0,94"/></td>
+          </tr>
+          <tr>
+            <td style="width:100px;"><input type="text" style="width:100px;" disabled value="0"/></td>
+            <td><input type="text" disabled value="355" /></td>
+            <td style="width:100px;"><input type="text" style="width:100px;" disabled value="1"/></td>
+            <td style="width:100px;"><input type="text" style="width:100px;" disabled/></td>
+            <td><input type="text" disabled value="N1"/></td>
+            <td><input type="text" disabled value="1,5"/></td>
+
+          </tr>
+          <tr>
+            <td style="width:100px;"><input type="text" style="width:100px;"disabled value="0"/></td>
+            <td><input type="text" disabled value="355" /></td>
+            <td style="width:100px;"><input type="text" style="width:100px;" disabled value="2"/></td>
+            <td style="width:100px;"><input type="text" style="width:100px;" disabled/></td>
+            <td><input type="text" disabled value="N2"/></td>
+            <td><input type="text" disabled value="1,75"/></td>
+
+          </tr>
+          <tr>
+            <td style="width:100px;"><input type="text" style="width:100px;" disabled value="0"/></td>
+            <td><input type="text" disabled value="355" /></td>
+            <td style="width:100px;"><input type="text" style="width:100px;" disabled value="999"/></td>
+            <td style="width:100px;"><input type="text" style="width:100px;" disabled/></td>
+            <td><input type="text" disabled value="N3"/></td>
+            <td><input type="text" disabled value="2,00"/></td>
+
+          </tr>
+        </table>
+      </p-tabPanel>
+    </p-tabView>
+  </div>
 </div>
+
+</div>
+
+
+

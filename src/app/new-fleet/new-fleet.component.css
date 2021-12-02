@@ -39,7 +39,7 @@ input {
   bottom: -10px;
   right:45px;
   position: absolute;
-  z-index: -1;
+
 }
 :host >>> table th {
   border:0px;

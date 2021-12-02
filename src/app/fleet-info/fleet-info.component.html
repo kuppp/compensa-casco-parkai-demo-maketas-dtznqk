@@ -901,18 +901,23 @@
           <td style="width: 160px">
             <p-button
               *ngIf="Schedule.paidSum > 0"
-              label="Sąskaita"
+              label="Atidaryti sąskaita"
               icon="pi pi-file-pdf"
               iconPos="left"
-              styleClass="p-button-success p-button-outlined p-button-sm"
+              styleClass="btn p-button-sm"
             ></p-button>
+            <p-button
+            *ngIf="Schedule.paidSum == 0"
+            label="Rašyti sąskaitą"
+            styleClass="btn  p-button-sm"
+          ></p-button>
           </td>
         </tr>
       </ng-template>
     </p-table>
   </p-tabPanel>
 
-  <p-tabPanel header="Komunikacija"> </p-tabPanel>
+  <p-tabPanel header="Komunikacija"> 
   <table class="borders" style="border-collapse:collapse;width:100%">
    
     <tr>
@@ -946,5 +951,5 @@
     </tr>
     
   </table>
-
+</p-tabPanel>
 </p-tabView>
