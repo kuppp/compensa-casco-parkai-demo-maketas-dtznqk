@@ -1,7 +1,5 @@
-<p-dialog header="Title" [(visible)]="displayCRM">
-<ng-template pTemplate="header">
-Patvirtinti nestandartines sąlygas
-</ng-template>
+<p-dialog header="Sąlygų derinimas" [(visible)]="displayCRM"  [style]="{ width: '1200px' }">
+
 
 <div class="p-fluid p-formgrid p-grid">
 <div class="p-field p-col-12">
@@ -12,10 +10,8 @@ Patvirtinti nestandartines sąlygas
 
 <ng-template pTemplate="footer">
 <p-button
-label="Perduoti suderinimui"
-icon="pi pi-reply"
-iconPos="left"
-styleClass="p-button-primary p-m-1 btn"
+label="Siųsti rizikos vertintojui"
+styleClass="p-m-1 btn"
 (click)="hideDialogCRM()"
 ></p-button>
 </ng-template>
@@ -39,6 +35,12 @@ styleClass="p-button-primary p-m-1 btn"
 <div class="p-col"><label for="policyholdercode" class="p-col-3 ">Kodas</label></div>
 <div class="p-col"><input id="policyholder" type="text" pInputText value="1100000001"/></div>
 </div>
+<div class="p-grid">
+  <div class="p-col"><label for="policyholder" class="p-col-3">Kuratorius</label></div>
+  <div class="p-col"><input id="policyholder" type="text" pInputText value="ASMUO VIENAS" style="width:100%" /></div>
+  <div class="p-col"><label for="policyholdercode" class="p-col-3 ">Kodas</label></div>
+  <div class="p-col"><input id="policyholder" type="text" pInputText value="450201000"/></div>
+  </div>
 
 <div class="p-grid">
 <div class="p-col"><label for="policyholder" class="p-col-3">Mokėtojas</label></div>
@@ -114,53 +116,64 @@ styleClass="p-button-primary p-m-1 btn"
   <p-tabPanel header="Draudimo sąlygos" >
     <h3>Standartinės draudimo sąlygos</h3>
 
-    <table style="width:50%;border-collapse:collapse;">
-    <tr style="text-align:left;"> 
-      <td style="border:1px solid #f1f1f1;padding:3px;  width:30%">Galiojimo teritorija</td>
-      <td style="border:1px solid #f1f1f1;padding:3px" ><input disabled style="width:100%" value="Europa"/> </td>
-    </tr>
-    <tr style="text-align:left">
-    <td style="border:1px solid #f1f1f1;padding:3px;">Paskirtis</td>
-      <td style="border:1px solid #f1f1f1;padding:3px" ><input disabled style="width:100%" value="Nepadidinta rizika"/></td>
-    </tr>
-    <tr style="text-align:left">
-    <td style="border:1px solid #f1f1f1;padding:3px; " colspan=2 >TP nusidėvėjimas</td>
-    </tr>
-    <tr style="text-align:left">
-    <td style="border:1px solid #f1f1f1;padding:3px">Draudiko pasirinkimu:</td>
-    <td style="border:1px solid #f1f1f1;padding:3px"><input disabled style="width:100%" value="TP virš 7 m."/></td>
-  </tr>
-    <tr style="text-align:left">
-      <td style="border:1px solid #f1f1f1;padding:3px">Draudėjo pasirinkimu:</td>
-      <td style="border:1px solid #f1f1f1;padding:3px"><input disabled style="width:100%" value="TP iki 6 m."/></td>
-    </tr>
+    <div class="p-grid">
+      <div class="p-col"><label for="policyholder" class="p-col-3">Draudimo variantas</label></div>
+     
+      <div class="p-col"><label for="policyholdercode" class="p-col-3 ">Paskirtis</label></div>
+ 
+      <div class="p-col"><label for="policyholdercode" class="p-col-3 ">Galiojimo teritorija</label></div>
+    </div>
+    <div class="p-grid">
+      <div class="p-col"><label for="policyholder" class="p-col-3"><input disabled style="width:100%" value="Nauja verte" /></label></div>
 
-    <tr style="text-align:left">
-    <td style="border:1px solid #f1f1f1;padding:3px; " colspan=2 >TP remontas</td>
-    </tr>
-    <tr style="text-align:left">
-    <td style="border:1px solid #f1f1f1;padding:3px">Draudiko pasirinkimu:</td>
-    <td style="border:1px solid #f1f1f1;padding:3px"><input disabled style="width:100%" value="TP virš 7 m."></td>
-  </tr>
-    <tr style="text-align:left">
-      <td style="border:1px solid #f1f1f1;padding:3px">Draudėjo pasirinkimu:</td>
-      <td style="border:1px solid #f1f1f1;padding:3px"><input disabled style="width:100%" value="TP iki 6 m."></td>
-    </tr>
+      <div class="p-col"><label for="policyholdercode" class="p-col-3 "><input disabled style="width:100%" value="Nepadidinta rizika" /></label></div>
+ 
+      <div class="p-col"><label for="policyholdercode" class="p-col-3 "><input disabled style="width:100%" value="Europa" /></label></div>
+    </div>
+    <div class="p-grid">
+      <div class="p-col"><label for="policyholder" class="p-col-3">TP nusidėvėjimas draudiko pasirinkimu</label></div>
+ 
+      <div class="p-col"><label for="policyholdercode" class="p-col-3 ">TP nusidėvėjimas draudejo pasirinkimu</label></div>
+ 
+      <div class="p-col"><label for="policyholdercode" class="p-col-3 ">TP remontas draudiko pasirinkimu </label></div>
+    </div>
 
-    <tr style="text-align:left">
-    <td style="border:1px solid #f1f1f1;padding:3px; " colspan=2 >Mokėjimo grafikas</td>
-    </tr>
-    <tr style="text-align:left">
-    <td style="border:1px solid #f1f1f1;padding:3px">Mokėjimų skaičius:</td>
-    <td style="border:1px solid #f1f1f1;padding:3px"><select  style="width:50%" value="4"><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="6">6</option></select></td>
-  </tr>
-    <tr style="text-align:left">
-      <td style="border:1px solid #f1f1f1;padding:3px">Pirmos įmokos atidėjimas:</td>
-      <td style="border:1px solid #f1f1f1;padding:3px"><select  style="width:50%" value="4"><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option></select></td>
-    </tr>
+    <div class="p-grid">
+      <div class="p-col"><label for="policyholder" class="p-col-3"><input disabled style="width:100%" value="TP virš 7 m." /></label></div>
+    
+      <div class="p-col"><label for="policyholdercode" class="p-col-3 "><input disabled style="width:100%" value="TP iki 6 m." /></label></div>
+     
+      <div class="p-col"><label for="policyholdercode" class="p-col-3 "><input disabled style="width:100%" value="TP virš 7 m." /></label></div>
+    </div>
 
+    <div class="p-grid">
+      <div class="p-col"><label for="policyholder" class="p-col-3">TP remontas draudėjo pasirinkimu</label></div>
+ 
+      <div class="p-col"><label for="policyholdercode" class="p-col-3 "></label></div>
+ 
+      <div class="p-col"><label for="policyholdercode" class="p-col-3 "> </label></div>
+    </div>
 
-  </table>
+    <div class="p-grid">
+      <div class="p-col"><label for="policyholder" class="p-col-3"><input disabled style="width:100%" value="TP iki 6 m." /></label></div>
+    
+      <div class="p-col"></div>
+     
+      <div class="p-col"></div>
+    </div>
+    <h3>Mokėjimai</h3>
+
+    <div class="p-grid">
+      <div class="p-col"><label for="policyholder" class="p-col-3">Mokėjimų skaičius:</label></div>
+      <div class="p-col"><label for="policyholder" class="p-col-3"><select  style="width:50%" value="4"><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="6">6</option></select></label></div>
+    </div>
+    <div class="p-grid">
+      <div class="p-col"><label for="policyholdercode" class="p-col-3 ">Pirmos įmokos atidėjimas:</label></div>
+      <div class="p-col"><label for="policyholder" class="p-col-3"><select  style="width:50%" value="4"><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="6">6</option></select></label></div>
+    
+
+    </div>
+
 
 
 
@@ -204,7 +217,7 @@ styleClass="p-button-primary p-m-1 btn"
     
       <div class="btn-vieta">
       <p-button
-      label="Perduoti suderinimui"
+      label="Siųsti rizikos vertintojui" pTooltip="Sutaties sąlygų pakeitimui, bus išsaugotas parko draudimas ir perduotas rizikos vertintojui pakeisti jas pagal poreikį"
       styleClass="p-mr-1 btn p-button-sm btn-apacioje"
       (click)="showDialogCRM()"
     ></p-button>

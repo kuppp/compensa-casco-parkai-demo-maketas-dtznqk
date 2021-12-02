@@ -8,20 +8,20 @@
     Įtraukti naujas transporto priemones
   </ng-template>
 
-  <table style="border-collapse:collapse;">
+  <table class="borders" style="border-collapse:collapse;">
     <tr>
-      <th style="background-color:#f1f1f1;padding:3px;width:100px;">
+      <th style=";padding:3px;width:100px;">
         Valstybinis nr.*
       </th>
-      <th style="background-color:#f1f1f1;padding:3px;">VIN*</th>
-      <th style="background-color:#f1f1f1;padding:3px;width:100px;">
+      <th style=";padding:3px;">VIN*</th>
+      <th style=";padding:3px;width:100px;">
         Poliso pradžia*
       </th>
-      <th style="background-color:#f1f1f1;padding:3px;width:100px;">Vertė</th>
-      <th style="background-color:#f1f1f1;padding:3px;">TP tipo kodas</th>
-      <th style="background-color:#f1f1f1;padding:3px;">TP marke</th>
-      <th style="background-color:#f1f1f1;padding:3px;">TP modelis</th>
-      <th style="background-color:#f1f1f1;padding:3px;">Kriterijai</th>
+      <th style=";padding:3px;width:100px;">Vertė</th>
+      <th style=";padding:3px;">TP tipo kodas</th>
+      <th style="padding:3px;">TP marke</th>
+      <th style=";padding:3px;">TP modelis</th>
+      <th style="padding:3px;">Kriterijai</th>
     </tr>
     <tr>
       <td style="width:100px;"><input type="text" style="width:100px" /></td>
@@ -77,16 +77,15 @@
 </p-dialog>
 
 <p-dialog
-  header="Poliso operacijos"
   [(visible)]="displayLOG"
   [style]="{ width: '1200px' }"
 >
-  <ng-template pTemplate="header">
-    <p>Generalinės sutarties <b> PARK 000001</b></p><br>
-    <p><b>2900 000001</b> poliso operacijos</p>
-  </ng-template>
+<ng-template pTemplate="header">
+  <span style="font-size:12px;">Generalinės sutarties <b> PARK 000001</b> poliso <b> 190 000001</b> operacijos</span>
+</ng-template>
 
-  <table style="border-collapse:collapse;width:100%">
+  <table class="borders" style="border-collapse:collapse;width:100%">
+   
     <tr>
       <th style="width:100px;">
         Data
@@ -109,12 +108,7 @@
   </table>
 
   <ng-template pTemplate="footer">
-    <p-button
-      label="įtraukti"
-      icon="pi pi-plus"
-      iconPos="left"
-      styleClass="p-m-1 btn"
-    ></p-button>
+
   </ng-template>
 </p-dialog>
 
@@ -167,6 +161,12 @@
             (click)="printTab = true; ImportTab = false"
             styleClass="p-button-success  p-m-1 btn p-button-sm"
           ></p-button>
+          <p-button
+          label="Exportuoti"
+          icon="pi pi-file-excel"
+          iconPos="left"
+          styleClass="p-button-success  p-m-1 btn p-button-sm"
+        ></p-button>
         </div>
     
     </div>
@@ -619,7 +619,7 @@
         </tr>
       </ng-template>
       <ng-template pTemplate="summary">
-        <div class="p-d-flex p-ai-center p-jc-between">
+        <div class="p-d-flex p-ai-center p-jc-between" style="font-size:12px;font-weight:600;">
           Pažymėta polisų - 0 , įmoka - 0 EUR, įvykių kiekis - 0, Išmokų suma (sureguliuotų ir nesureguliuotų) - 0 EUR
         </div>
       </ng-template>
@@ -701,109 +701,97 @@
 
     <h3>Kitos sąlygos</h3>
 
-    <table style="width:50%;border-collapse:collapse;">
-      <tr style="text-align:left;">
-        <td style="border:1px solid #f1f1f1;padding:3px;  width:30%">
-          Galiojimo teritorija
-        </td>
-        <td style="border:1px solid #f1f1f1;padding:3px">
-          <input disabled style="width:100%" value="Europa" />
-        </td>
-      </tr>
-      <tr style="text-align:left">
-        <td style="border:1px solid #f1f1f1;padding:3px;">Paskirtis</td>
-        <td style="border:1px solid #f1f1f1;padding:3px">
-          <input disabled style="width:100%" value="Nepadidinta rizika" />
-        </td>
-      </tr>
-      <tr style="text-align:left">
-        <td style="border:1px solid #f1f1f1;padding:3px; " colspan="2">
-          TP nusidėvėjimas
-        </td>
-      </tr>
-      <tr style="text-align:left">
-        <td style="border:1px solid #f1f1f1;padding:3px">
-          Draudiko pasirinkimu:
-        </td>
-        <td style="border:1px solid #f1f1f1;padding:3px">
-          <input disabled style="width:100%" value="TP virš 7 m." />
-        </td>
-      </tr>
-      <tr style="text-align:left">
-        <td style="border:1px solid #f1f1f1;padding:3px">
-          Draudėjo pasirinkimu:
-        </td>
-        <td style="border:1px solid #f1f1f1;padding:3px">
-          <input disabled style="width:100%" value="TP iki 6 m." />
-        </td>
-      </tr>
+    <div class="p-grid">
+      <div class="p-col"><label for="policyholder" class="p-col-3">Draudimo variantas</label></div>
+     
+      <div class="p-col"><label for="policyholdercode" class="p-col-3 ">Paskirtis</label></div>
+ 
+      <div class="p-col"><label for="policyholdercode" class="p-col-3 ">Galiojimo teritorija</label></div>
+    </div>
+    <div class="p-grid">
+      <div class="p-col"><label for="policyholder" class="p-col-3"><input disabled style="width:100%" value="Nauja verte" /></label></div>
 
-      <tr style="text-align:left">
-        <td style="border:1px solid #f1f1f1;padding:3px; " colspan="2">
-          TP remontas
-        </td>
-      </tr>
-      <tr style="text-align:left">
-        <td style="border:1px solid #f1f1f1;padding:3px">
-          Draudiko pasirinkimu:
-        </td>
-        <td style="border:1px solid #f1f1f1;padding:3px">
-          <input disabled style="width:100%" value="TP virš 7 m." />
-        </td>
-      </tr>
-      <tr style="text-align:left">
-        <td style="border:1px solid #f1f1f1;padding:3px">
-          Draudėjo pasirinkimu:
-        </td>
-        <td style="border:1px solid #f1f1f1;padding:3px">
-          <input disabled style="width:100%" value="TP iki 6 m." />
-        </td>
-      </tr>
-    </table>
+      <div class="p-col"><label for="policyholdercode" class="p-col-3 "><input disabled style="width:100%" value="Nepadidinta rizika" /></label></div>
+ 
+      <div class="p-col"><label for="policyholdercode" class="p-col-3 "><input disabled style="width:100%" value="Europa" /></label></div>
+    </div>
+    <div class="p-grid">
+      <div class="p-col"><label for="policyholder" class="p-col-3">TP nusidėvėjimas draudiko pasirinkimu</label></div>
+ 
+      <div class="p-col"><label for="policyholdercode" class="p-col-3 ">TP nusidėvėjimas draudejo pasirinkimu</label></div>
+ 
+      <div class="p-col"><label for="policyholdercode" class="p-col-3 ">TP remontas druudiko pasirinkimu </label></div>
+    </div>
+
+    <div class="p-grid">
+      <div class="p-col"><label for="policyholder" class="p-col-3"><input disabled style="width:100%" value="TP virš 7 m." /></label></div>
+    
+      <div class="p-col"><label for="policyholdercode" class="p-col-3 "><input disabled style="width:100%" value="TP iki 6 m." /></label></div>
+     
+      <div class="p-col"><label for="policyholdercode" class="p-col-3 "><input disabled style="width:100%" value="TP virš 7 m." /></label></div>
+    </div>
+
+    <div class="p-grid">
+      <div class="p-col"><label for="policyholder" class="p-col-3">TP remontas draudėjo pasirinkimu</label></div>
+ 
+      <div class="p-col"><label for="policyholdercode" class="p-col-3 "></label></div>
+ 
+      <div class="p-col"><label for="policyholdercode" class="p-col-3 "> </label></div>
+    </div>
+
+    <div class="p-grid">
+      <div class="p-col"><label for="policyholder" class="p-col-3"><input disabled style="width:100%" value="TP iki 6 m." /></label></div>
+    
+      <div class="p-col"></div>
+     
+      <div class="p-col"></div>
+    </div>
+
+
 
     <br />
     <label for="lastname4" class="p-col-12 p-mb-2 p-md-2 p-mb-md-0"
       >Draudimo sąlygos:</label
     >
-    <table style="width:100%">
+    <table style="width:100%;border-collapse:collapse">
       <tr>
         <th
-          style="text-align:left;border:1px solid #f1f1f1;padding:3px; background-color:#f1f1f1"
+          style="text-align:left;border:1px solid #f1f1f1;padding:3px;"
         >
           TP Tipas
         </th>
         <th
-          style="text-align:left;border:1px solid #f1f1f1;padding:3px; background-color:#f1f1f1"
+          style="text-align:left;border:1px solid #f1f1f1;padding:3px; "
         >
           Tarifas
         </th>
         <th
-          style="text-align:left;border:1px solid #f1f1f1;padding:3px; background-color:#f1f1f1"
+          style="text-align:left;border:1px solid #f1f1f1;padding:3px; "
         >
           Išskaita rizikoms, EUR
         </th>
         <th
-          style="text-align:left;border:1px solid #f1f1f1;padding:3px; background-color:#f1f1f1"
+          style="text-align:left;border:1px solid #f1f1f1;padding:3px; "
         >
           Išskaita vagystei, %
         </th>
         <th
-          style="text-align:left;border:1px solid #f1f1f1;padding:3px; background-color:#f1f1f1"
+          style="text-align:left;border:1px solid #f1f1f1;padding:3px;"
         >
           Minimali įmoka, EUR
         </th>
         <th
-          style="text-align:left;border:1px solid #f1f1f1;padding:3px; background-color:#f1f1f1"
+          style="text-align:left;border:1px solid #f1f1f1;padding:3px; "
         >
           Draudimo variantas
         </th>
         <th
-          style="text-align:left;border:1px solid #f1f1f1;padding:3px; background-color:#f1f1f1"
+          style="text-align:left;border:1px solid #f1f1f1;padding:3px; "
         >
           Vairuotojas ir keleiviai
         </th>
         <th
-          style="text-align:left;border:1px solid #f1f1f1;padding:3px; background-color:#f1f1f1"
+          style="text-align:left;border:1px solid #f1f1f1;padding:3px; "
         >
           Pagalba kelyje
         </th>
@@ -852,15 +840,15 @@
       >Komisiniai:</label
     >
 
-    <table style="width:50%">
+    <table style="width:50%;border-collapse:collapse">
       <tr style="text-align:left">
         <th
-          style="border:1px solid #f1f1f1;padding:3px; background-color:#f1f1f1"
+          style="border:1px solid #f1f1f1;padding:3px; "
         >
           Rūšis
         </th>
         <th
-          style="border:1px solid #f1f1f1;padding:3px; background-color:#f1f1f1"
+          style="border:1px solid #f1f1f1;padding:3px; "
         >
           Tarifas
         </th>

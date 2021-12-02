@@ -29,6 +29,10 @@
 
   }
 
+  :host >>> table.borders td{
+ border: 1px solid #f1f1f1;
+  }
+
   :host >>> .p-datatable .p-datatable-thead th {
     padding: 10px 30px;
     background-color:#9e9e9e;
