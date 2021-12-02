@@ -20,6 +20,13 @@ letter-spacing: 0.075e;text-align: center;    padding: 10px 5px;font-size: 14px;
         styleClass="p-button-secondary p-m-1 btn p-button-sm"
       ></p-button>
       <p-button
+      label="Skaičiuoti drausmingumą"
+      icon="pi pi-shield"
+      iconPos="left"
+      (click)="page = 'new-fleet';blankScreen = true;"
+      styleClass="p-button-secondary p-m-1 btn p-button-sm"
+    ></p-button>
+      <p-button
         label="Paieška"
         icon="pi pi-search"
         iconPos="left"
