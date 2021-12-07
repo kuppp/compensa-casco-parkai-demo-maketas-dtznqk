@@ -228,7 +228,7 @@
     <p-table
       [value]="policies"
       [scrollable]="true"
-      scrollHeight="100%"
+      scrollHeight="900px"
       [rowHover]="true"
       [globalFilterFields]="[
         'vehicle.vastnr',
@@ -612,7 +612,7 @@
         </tr>
       </ng-template>
       <ng-template pTemplate="summary">
-       
+      <button (click)="policies.expandedRows =[];">Collapse all</button>
           <tr>
             <table>
               <tr>

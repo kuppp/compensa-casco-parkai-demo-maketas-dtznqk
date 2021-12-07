@@ -73,6 +73,9 @@ showDialogPolisoLogas() {
   this.displayLOG = true;
 }
 
+collapseAll() {
+ 
+}
 
 paste(event: ClipboardEvent){
   let clipboardData = event.clipboardData;
