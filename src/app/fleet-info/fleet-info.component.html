@@ -165,7 +165,7 @@
           label="Exportuoti"
           icon="pi pi-file-excel"
           iconPos="left"
-          styleClass="p-button-success  p-m-1 btn p-button-sm"
+          styleClass="p-button-success p-button-outlined p-m-1 btn p-button-sm"
         ></p-button>
         </div>
     
@@ -247,7 +247,7 @@
           <label style="padding-right:5px;"
             >Transporto priemonės paieška:</label
           >
-          <span class="p-input-icon-left">
+          <span class="p-input-icon-right">
             <i class="pi pi-search"></i>
             <input
               style="margin-left:0px;padding:2px"
@@ -404,8 +404,8 @@
     </td></tr>
 
         <tr>
-          <td style="flex:0 0 100%;">
-            <div class="p-p-3">
+          <td style="flex:0 0 100%;margin:0px;padding:0px">
+            <div class="p-p-0">
               <table class="p-datatable-gridline" style="width:100%">
                 <tr>
                   <th style="padding:3px;width:50%">
@@ -568,6 +568,7 @@
                                 </th>
                                 <th pSortableColumn="status">Mokėtina suma</th>
                                 <th pSortableColumn="status">Apmokėta suma</th>
+                                <th pSortableColumn="status">Skola pagal grafiką</th>
                               </tr>
                             </ng-template>
                               
@@ -578,6 +579,7 @@
                                 </td>
                                 <td>{{ Schedule.paymentSum }}</td>
                                 <td>{{ Schedule.paidSum }}</td>
+                                <td>{{ Schedule.paymentSum - Schedule.paidSum }}</td>
                               </tr>
                             </ng-template>
                             <ng-template pTemplate="summary">
@@ -619,9 +621,23 @@
         </tr>
       </ng-template>
       <ng-template pTemplate="summary">
-        <div class="p-d-flex p-ai-center p-jc-between" style="font-size:12px;font-weight:600;">
-          Pažymėta polisų - 0 , įmoka - 0 EUR, įvykių kiekis - 0, Išmokų suma (sureguliuotų ir nesureguliuotų) - 0 EUR
-        </div>
+       
+          <tr>
+            <table>
+              <tr>
+            <td colspan="11"></td>
+            <td>3000 EUR</td>
+            <td></td>
+            <td>30 EUR</td>
+          </tr>
+          <tr>
+            <td colspan="14">
+               Pažymėta polisų - 0 , <span style="color:#34a8e5;">įvykių kiekis - 0, Išmokų suma (sureguliuotų ir nesureguliuotų) - 0 EUR</span>
+            </td>
+          </tr>
+        </table>
+      </tr>
+
       </ng-template>
     </p-table>
   </p-tabPanel>

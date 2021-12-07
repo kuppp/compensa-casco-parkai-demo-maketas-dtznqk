@@ -28,7 +28,7 @@
         "name": "Išplėstinė Pagalba, Vairuotojas ir keleiviai"
       },
       "schedule": [
-          {"date": "2022-01-01", "paymentSum": "125.00", "paidSum": "15.00"},
+          {"date": "2022-01-01", "paymentSum": "125.00", "paidSum": "150.00"},
           {"date": "2022-04-01", "paymentSum": "125.00", "paidSum": "0.00"},
           {"date": "2022-08-01", "paymentSum": "125.00", "paidSum": "0.00"},
           {"date": "2022-12-01", "paymentSum": "125.00", "paidSum": "0.00"}
@@ -116,10 +116,7 @@
         "premium": "6",
         "name": "Vairuotojas ir keleiviai"
       },      "schedule": [
-        {"date": "2022-01-01", "paymentSum": "1125.00", "paidSum": "1125.00"},
-        {"date": "2022-04-01", "paymentSum": "1125.00", "paidSum": "0.00"},
-        {"date": "2022-08-01", "paymentSum": "1125.00", "paidSum": "0.00"},
-        {"date": "2022-12-01", "paymentSum": "1125.00", "paidSum": "0.00"}
+        {"date": "2021-12-02", "paymentSum": "1125.00", "paidSum": "1125.00"}
   ]
     },
     {
