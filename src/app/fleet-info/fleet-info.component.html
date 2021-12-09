@@ -22,6 +22,7 @@
       <th style="padding:3px;">TP marke</th>
       <th style=";padding:3px;">TP modelis</th>
       <th style="padding:3px;">Kriterijai</th>
+      <th style="padding:3px;">Naudos gavėjo kodas</th>
     </tr>
     <tr>
       <td style="width:100px;"><input type="text" style="width:100px" /></td>
@@ -33,15 +34,6 @@
       <td><input type="text" /></td>
 
       <td><input type="text" /></td>
-    </tr>
-    <tr>
-      <td style="width:100px;"><input type="text" style="width:100px;" /></td>
-      <td><input type="text" /></td>
-      <td style="width:100px;"><input type="text" style="width:100px;" /></td>
-      <td style="width:100px;"><input type="text" style="width:100px;" /></td>
-      <td><input type="text" /></td>
-      <td><input type="text" /></td>
-      <td><input type="text" /></td>
       <td><input type="text" /></td>
     </tr>
     <tr>
@@ -53,12 +45,25 @@
       <td><input type="text" /></td>
       <td><input type="text" /></td>
       <td><input type="text" /></td>
+      <td><input type="text" /></td>
     </tr>
     <tr>
       <td style="width:100px;"><input type="text" style="width:100px;" /></td>
       <td><input type="text" /></td>
       <td style="width:100px;"><input type="text" style="width:100px;" /></td>
       <td style="width:100px;"><input type="text" style="width:100px;" /></td>
+      <td><input type="text" /></td>
+      <td><input type="text" /></td>
+      <td><input type="text" /></td>
+      <td><input type="text" /></td>
+      <td><input type="text" /></td>
+    </tr>
+    <tr>
+      <td style="width:100px;"><input type="text" style="width:100px;" /></td>
+      <td><input type="text" /></td>
+      <td style="width:100px;"><input type="text" style="width:100px;" /></td>
+      <td style="width:100px;"><input type="text" style="width:100px;" /></td>
+      <td><input type="text" /></td>
       <td><input type="text" /></td>
       <td><input type="text" /></td>
       <td><input type="text" /></td>
@@ -112,6 +117,101 @@
   </ng-template>
 </p-dialog>
 
+<p-dialog header="Susisiekti su rizikos vertintoju" [(visible)]="displayCRM"  [style]="{ width: '1200px' }">
+
+
+<div class="p-fluid p-formgrid p-grid">
+<div class="p-field p-col-12">
+    <label for="address">Pastabos</label>
+    <textarea id="address" type="text" rows="4" pInputTextarea></textarea>
+</div>
+</div>
+
+<ng-template pTemplate="footer">
+<p-button
+label="Siųsti"
+styleClass="p-m-1 btn"
+></p-button>
+</ng-template>
+</p-dialog>
+
+<p-dialog header="Siųsti el. laišką" [(visible)]="displayEMAIL"  [style]="{ width: '800px' }">
+<table style="width:750px;padding:10px;" >
+<tr>
+<td style="text-align:left;border:0px;wisth:200px; ">
+  Nuo:
+</td>
+<td style="border:0px; width:600px;">
+  <input
+    disabled
+    style="width:100%"
+    value="BROKERIS"
+  />
+</td>
+</tr>
+<tr>
+<td style="text-align:left;border:0px;wisth:200px;">
+  Kam:
+</td>
+<td style="border:0px; width:600px;">
+  <input
+    
+    style="width:100%"
+    value="DRAUDEJAS"
+  />
+</td>
+</tr>
+<tr>
+<td style="text-align:left;border:0px;wisth:200px;">
+  Antraštė:
+</td>
+<td style="border:0px; width:600px;">
+  <input
+    
+    style="width:100%"
+    value="KASKO parko draudimas PARK00001"
+  />
+</td>
+</tr>
+
+<tr>
+<td style="text-align:left;border:0px;wisth:200px;">
+  Dokumentai:
+</td>
+<td style="border:0px; width:600px;">
+<p-chip label="sutartis_PARK00001.pdf" [removable]="true" class="sm"></p-chip>
+<p-chip label="liudijimas_PARK00001.pdf" [removable]="true" class="sm"></p-chip>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;border:0px;wisth:200px;">
+  Papildomi dokumentai:
+</td>
+<td style="border:0px; width:600px;">
+<span style="margin:3px;"><input type="checkbox">TP SIGNALIZACIJOS LYGIAI.PDF</span>
+<span  style="margin:3px;"><input type="checkbox">kasko taisykles.PDF</span>
+
+</td>
+</tr>
+
+
+<tr>
+  <td colspan=2 style="height:320px;vertical-align:top;">  
+     <textarea style="width:100%;height:500px"></textarea>
+  </td>
+</tr>
+</table>
+
+
+<ng-template pTemplate="footer">
+<p-button
+label="Siųsti"
+styleClass="p-m-1 btn"
+></p-button>
+</ng-template>
+</p-dialog>
+
+
 <p-tabView>
   <p-tabPanel header="Parkas">
     <div style="padding-bot">
@@ -161,6 +261,13 @@
             (click)="printTab = true; ImportTab = false"
             styleClass="p-button-success  p-m-1 btn p-button-sm"
           ></p-button>
+          <p-button
+          label="Siųsti"
+          icon="pi pi-send"
+          iconPos="left"
+          (click)="showDialogEMAIL()"
+          styleClass="p-button-success  p-m-1 btn p-button-sm"
+        ></p-button>
           <p-button
           label="Exportuoti"
           icon="pi pi-file-excel"
@@ -559,7 +666,7 @@
                                 </th>
                                 <th pSortableColumn="status">Mokėtina suma</th>
                                 <th pSortableColumn="status">Apmokėta suma</th>
-                                <th pSortableColumn="status">Skola pagal grafiką</th>
+                                <th pSortableColumn="status">Skola pagal grafiką &nbsp;<i class="pi pi-question-circle" pTooltip="Mokėtina sumos ir apmokėtos sumos skirtumas. Skaičiuojama pagal mokėjimo grafiką"></i></th>
                               </tr>
                             </ng-template>
                               
@@ -612,22 +719,20 @@
         </tr>
       </ng-template>
       <ng-template pTemplate="summary">
-      <button (click)="policies.expandedRows =[];">Collapse all</button>
-          <tr>
-            <table>
+      <button (click)="policies.expandedRows =[];">Suskleisti informaciją</button>
+         
+        
               <tr>
-            <td colspan="11"></td>
-            <td>3000 EUR</td>
-            <td></td>
-            <td>30 EUR</td>
+            <td colspan="14">
+            Pažymėta polisų - 0 <br> Įmoka - 1000 EUR, papildomi draudimai - 50 EUR </td>
           </tr>
           <tr>
             <td colspan="14">
-               Pažymėta polisų - 0 , <span style="color:#34a8e5;">įvykių kiekis - 0, Išmokų suma (sureguliuotų ir nesureguliuotų) - 0 EUR</span>
+            <span style="color:#34a8e5;">įvykių kiekis - 0, Išmokų suma (sureguliuotų ir nesureguliuotų) - 0 EUR</span>
             </td>
           </tr>
-        </table>
-      </tr>
+    
+    
 
       </ng-template>
     </p-table>
@@ -958,5 +1063,11 @@
     </tr>
     
   </table>
+  <br>
+  <p-button
+  label="Susisiekti su rizikos vertintoju" pTooltip="Kuriama nauja komunikacija"
+  styleClass="p-mr-1 btn p-button-sm"
+  (click)="showDialogCRM()"
+></p-button>
 </p-tabPanel>
 </p-tabView>

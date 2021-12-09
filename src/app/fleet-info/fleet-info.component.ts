@@ -22,6 +22,16 @@ export class FleetInfoComponent implements OnInit {
 
   constructor(private PolicyListService: PolicyListService) { }
 
+  displayCRM: boolean = false;
+  displayEMAIL: boolean = false;
+  showDialogCRM() {
+      this.displayCRM = true;
+  }
+
+  showDialogEMAIL() {
+    this.displayEMAIL = true;
+}
+
   ngOnInit() {
     this.PolicyListService.getPolicyMedium().then(data => {
       this.policies = data

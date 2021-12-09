@@ -67,4 +67,13 @@
   text-align: left;
   }
   
+  :host >>> .btn-apacioje {
+    padding: 0 38px;min-width: 160px;
+   position:relative;
+  }
   
+  :host >>> .btn-vieta{
+    bottom: -10px;
+    right:45px;
+    position: absolute;
+  }

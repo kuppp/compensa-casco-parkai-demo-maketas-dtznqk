@@ -20,7 +20,7 @@ import * as Global from './global-variables';
         :host ::ng-deep  .row-not-imported {
             background-color: rgb(238, 254, 255) !important;
             disabled: true;
-        }`]
+        }`,  "../node_modules/quill/dist/quill.core.css", "../node_modules/quill/dist/quill.snow.css"]
 })
 
 
@@ -32,7 +32,10 @@ export class AppComponent {
     mainMenu: MenuItem[];
     fleet: Fleet[];
 
+    
     constructor(private PolicyListService: PolicyListService) { }
+
+
 
     ngOnInit() {
         this.mainMenu = [
