@@ -261,13 +261,7 @@ styleClass="p-m-1 btn"
             (click)="printTab = true; ImportTab = false"
             styleClass="p-button-success  p-m-1 btn p-button-sm"
           ></p-button>
-          <p-button
-          label="Siųsti"
-          icon="pi pi-send"
-          iconPos="left"
-          (click)="showDialogEMAIL()"
-          styleClass="p-button-success  p-m-1 btn p-button-sm"
-        ></p-button>
+
           <p-button
           label="Exportuoti"
           icon="pi pi-file-excel"
@@ -293,6 +287,14 @@ styleClass="p-m-1 btn"
             iconPos="left"
             styleClass="p-button-success p-m-1 btn p-button-sm"
           ></p-button>
+
+          <p-button
+          label="Email"
+          icon="pi pi-send"
+          iconPos="left"
+          (click)="showDialogEMAIL()"
+          styleClass="p-button-success  p-m-1 btn p-button-sm"
+        ></p-button>
         </div>
  
     </div>
@@ -651,39 +653,36 @@ styleClass="p-m-1 btn"
 
                       <tr >
                         <td colspan="2" style="padding-top:5px;">
-                          <p-table
-                            [rowHover]="true"
-                            [value]="policy.schedule"
-                            styleClass="p-datatable-sm"
-                          >
+
+                          <p-table  [value]="policy.schedule" style="flex:none;">
                             <ng-template pTemplate="header">
                               <tr>
-                                <th
-                                  pSortableColumn="Nr"
-                                  style="max-width: 120px; mamrgin:2px;"
-                                >
+                                <th style="width:100px; " >
                                   Data
                                 </th>
-                                <th pSortableColumn="status">Mokėtina suma</th>
-                                <th pSortableColumn="status">Apmokėta suma</th>
-                                <th pSortableColumn="status">Skola pagal grafiką &nbsp;<i class="pi pi-question-circle" pTooltip="Mokėtina sumos ir apmokėtos sumos skirtumas. Skaičiuojama pagal mokėjimo grafiką"></i></th>
+                                <th  style="width: 150px;flex:none;">Mokėtina suma</th>
+                                <th  style="width: 150px;">Apmokėta suma</th>
+                                <th  style="">Skola pagal grafiką &nbsp;<i class="pi pi-question-circle" pTooltip="Mokėtina sumos ir apmokėtos sumos skirtumas. Skaičiuojama pagal mokėjimo grafiką"></i></th>
                               </tr>
                             </ng-template>
                               
                             <ng-template pTemplate="body" let-Schedule>
                               <tr>
-                                <td style="max-width: 120px">
+                                <td style="width: 100px">
                                   <span>{{ Schedule.date }}</span>
                                 </td>
-                                <td>{{ Schedule.paymentSum }}</td>
-                                <td>{{ Schedule.paidSum }}</td>
+                                <td style="width: 150px;">{{ Schedule.paymentSum }}</td>
+                                <td style="width: 150px;">{{ Schedule.paidSum }}</td>
                                 <td>{{ Schedule.paymentSum - Schedule.paidSum }}</td>
                               </tr>
                             </ng-template>
-                            <ng-template pTemplate="summary">
-                              <span style="font-size:10pt"
-                                >Bendra įmoka: XXX EUR</span
-                              ><br />
+                            <ng-template pTemplate="footer">
+                            <tr >
+                            <th style="width: 100px;flex:none"></th>
+                            <th style="width: 150px;flex:none">4.000,00</th>
+                            <th style="width: 150px;flex:none">125,00</th>
+                            <th style="" >75,00</th>
+                          </tr>
                             
                             </ng-template>
                           </p-table>
@@ -998,7 +997,7 @@ styleClass="p-m-1 btn"
           <th style="width: 100px">Data</th>
           <th style="width: 160px">Mokėtina suma</th>
           <th style="width: 160px">Apmokėta suma</th>
-          <th style="width: 160px">Sąskaita</th>
+          <th style="">Sąskaita</th>
         </tr>
       </ng-template>
 
@@ -1025,6 +1024,16 @@ styleClass="p-m-1 btn"
           ></p-button>
           </td>
         </tr>
+      </ng-template>
+      <ng-template pTemplate="footer">
+      <tr>
+      <th pSortableColumn="Nr" style="width: 50px"></th>
+      <th style="width: 100px">Viso:</th>
+      <th style="width: 160px;text-align:left;padding:0px;">100.000,00</th>
+      <th style="width: 160px;text-align:left;padding:0px;">2.000,00</th>
+      <th style=""></th>
+    </tr>
+
       </ng-template>
     </p-table>
   </p-tabPanel>
