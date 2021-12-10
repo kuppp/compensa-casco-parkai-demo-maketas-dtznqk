@@ -36,9 +36,11 @@ letter-spacing: 0.075e;text-align: center;    padding: 10px 5px;font-size: 14px;
         styleClass="p-button-secondary p-m-1 btn p-button-sm"
       ></p-button>
     </div>  
-    <div class="p-grid p-jc-center">
-     <a href="" targer="_blank"> <img src="https://esales.compensa.lt/wisp_new_test/content/shared/images/MTPL_KASKO11.jpg"  width="720px" height="120px"/></a>
-    </div>
+
+    <div style="margin-top:5px;">
+    <a href="" targer="_blank"> <img src="https://esales.compensa.lt/wisp_new_test/content/shared/images/MTPL_KASKO11.jpg"  width="720px" height="120px"/></a>
+   </div>
+
   </p-toolbar>
 </div>
 
@@ -219,9 +221,8 @@ style="width:400px"
 <td style="width:450px;">
 <p-button
 label="ieškoti"
-styleClass="p-button-success p-m-1 p-pt-0 p-pb-0  btn p-button-sm"
+styleClass="btn p-button-sm"
 (click)="SearchResults = true;"
-diasbled
 ></p-button>
 </td>
 </tr>
@@ -231,7 +232,7 @@ diasbled
 
 <div>
 
-<div *ngIf="SearchResults">
+<div *ngIf="SearchResults" style="margin-top:20px;">
 
 
 <p-table
@@ -277,7 +278,7 @@ styleClass="p-datatable-gridline p-datatable-sm"
       label="Atidaryti"
       icon="pi pi-folder-open"
       iconPos="left"
-      styleClass="p-button-success p-m-1 p-pt-0 p-pb-0  btn p-button-sm"
+      styleClass="p-button-success  btn p-button-sm"
       (click)="page = 'fleet'"
     ></p-button>
 </td>
