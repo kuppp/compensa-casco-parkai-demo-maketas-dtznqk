@@ -654,15 +654,15 @@ styleClass="p-m-1 btn"
                       <tr >
                         <td colspan="2" style="padding-top:5px;">
 
-                          <p-table  [value]="policy.schedule" style="flex:none;">
+                          <p-table  [value]="policy.schedule" >
                             <ng-template pTemplate="header">
                               <tr>
                                 <th style="width:100px; " >
                                   Data
                                 </th>
-                                <th  style="width: 150px;flex:none;">Mokėtina suma</th>
+                                <th  style="width: 150px;">Mokėtina suma</th>
                                 <th  style="width: 150px;">Apmokėta suma</th>
-                                <th  style="">Skola pagal grafiką &nbsp;<i class="pi pi-question-circle" pTooltip="Mokėtina sumos ir apmokėtos sumos skirtumas. Skaičiuojama pagal mokėjimo grafiką"></i></th>
+                                <th style="width:auto;">Skola pagal grafiką &nbsp;<i class="pi pi-question-circle" pTooltip="Mokėtina sumos ir apmokėtos sumos skirtumas. Skaičiuojama pagal mokėjimo grafiką"></i></th>
                               </tr>
                             </ng-template>
                               
@@ -677,11 +677,11 @@ styleClass="p-m-1 btn"
                               </tr>
                             </ng-template>
                             <ng-template pTemplate="footer">
-                            <tr >
-                            <th style="width: 100px;flex:none"></th>
-                            <th style="width: 150px;flex:none">4.000,00</th>
-                            <th style="width: 150px;flex:none">125,00</th>
-                            <th style="" >75,00</th>
+                            <tr>
+                            <td style="width: 100px;background-color:#9e9e9e;color:#fff;font-size: 10px;">VISO:</td>
+                            <td style="width: 150px;background-color:#9e9e9e;color:#fff;font-size: 10px;">4.000,00</td>
+                            <td style="width: 150px;background-color:#9e9e9e;color:#fff;font-size: 10px;">125,00</td>
+                            <td style="background-color:#9e9e9e;color:#fff;font-size: 10px;" >75,00</td>
                           </tr>
                             
                             </ng-template>
