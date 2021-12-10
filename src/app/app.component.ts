@@ -26,7 +26,7 @@ import * as Global from './global-variables';
 
 export class AppComponent { 
 
-    page: string = 'fleet';
+    page: string = 'blank';
     blankScreen: boolean = true;
     policies: Policy[];
     mainMenu: MenuItem[];
